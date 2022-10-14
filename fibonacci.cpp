@@ -1,6 +1,18 @@
 #include <iostream>
 using namespace std;
 
+void printfib(int n){
+    int first = 0, second = 1, third;
+
+    cout << first << " " << second;
+    for (int i = 2; i < n; i++){
+        third = first + second;
+        cout << " " << third;
+        first = second;
+        second = third;
+    }
+}
+
 int main() {
     int n, t1 = 0, t2 = 1, nextTerm = 0;
 
@@ -25,4 +37,5 @@ int main() {
         
         cout << nextTerm << ", ";
     }
+    // printfib(n);
     return 0;
