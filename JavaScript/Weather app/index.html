@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>weather app</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+	<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="title">
+			<h1>Current Weather</h1>
+			<lord-icon
+			    src="https://cdn.lordicon.com/elzslyvl.json"
+			    trigger="loop" 
+			    delay="2000"
+			    colors="primary:#4be1ec,secondary:#cb5eee"
+			    state="hover-spin"
+			    style="width:50px;height:50px">
+			</lord-icon><!-- //trigger="loop-on-hover" -->
+		</div>
+		<div class="search">
+			<input class="search-bar" type="text" placeholder="Search" />
+			<button>
+				<lord-icon
+				    src="https://cdn.lordicon.com/msoeawqm.json"
+				    trigger="hover"
+				    colors="primary:#ffffff,secondary:#08a88a"
+				    style="width:37px;height:37px">
+				</lord-icon>
+			</button>
+		</div>
+		<div class="weather">
+			<h2 class="city">Weather in chennai</h2>
+			<h1 class="temp">°C</h1>
+			<div class="temp-container">
+				<img src="" alt="" class="icon" />
+				<div class="desc"></div>
+			</div>
+			<div class="humidity">Humidity:</div>
+			<div class="wind">Wind Speed: km/h</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js" defer></script>
+</body>
+</html>
