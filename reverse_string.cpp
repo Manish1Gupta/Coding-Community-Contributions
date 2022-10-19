@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 void reverseStr(string& str)
@@ -9,8 +8,9 @@ void reverseStr(string& str)
 }
 int main()
 {
-	string str = "geeksforgeeks";
-	reverseStr(str);
-	cout << str;
+	string input_str;
+	cin>>input_str;
+	reverseStr(input_str);
+	cout << "Reversed string: "<< input_str;
 	return 0;
 }
