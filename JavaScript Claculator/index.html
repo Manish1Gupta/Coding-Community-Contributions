@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">Javascript Clock</h1>
+    </div>
+
+    <div style="display: flex;justify-content: center;align-items: center;background: yellow;max-width: 500px;margin: 20px auto;">
+        <p id="hour" style="font-size: 100px;padding: 20px;margin:10px;background:gray;color:white"></p>
+        <p id="minute" style="font-size: 100px;padding: 20px;margin:10px;background:gray;color:white"></p>
+        <p id="second" style="font-size: 100px;padding: 20px;margin:10px;background:gray;color:white"></p>
+    </div>
+    <p style="text-align: center">Date : <span id="date" style="color:black"></span></p>
+
+    <script>
+
+        let h = document.getElementById('hour')
+        let m = document.getElementById('minute')
+        let s = document.getElementById('second')
+        let da = document.getElementById('date')
+
+        
+
+        // function clock() {
+            
+        // }
+        
+        setInterval(() => {
+            const d = new Date()
+        const hour = d.getHours()
+        const minute = d.getMinutes()
+        const second = d.getSeconds()
+        const date = d.getDate()
+            h.innerHTML=hour
+            m.innerHTML=minute
+            s.innerHTML=second
+            da.innerHTML = date
+        }, 1000);
+
+
+    </script>
+</body>
+</html>
