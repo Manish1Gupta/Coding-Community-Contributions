@@ -1,0 +1,21 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int addNumbers(int); //function Prototype
+int main()
+{
+    int num; //variable declaration
+    cout<<"enter a positive integer find sum: ";
+    cin>>num;
+    cout<<"Sum of natural  numbers are until "<<num<<":"<<addNumbers(num);
+    //functiuon call
+    getch();
+    return 0;
+}
+int addNumbers(int n)//function definition
+{
+    if(n!= 0)
+        return n+addNumbers(n-1);
+    else
+        return n;
+}
