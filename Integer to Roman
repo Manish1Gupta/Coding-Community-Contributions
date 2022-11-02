@@ -1,0 +1,81 @@
+class Solution {
+public:
+    string intToRoman(int num) {
+        string s;
+        int a=num%10;
+        num/=10;
+        int b=num%10;
+        b*=10;
+        num/=10;
+        int c=num%10;
+        c*=100;
+        num/=10;
+        int d=num%10;
+        d*=1000;
+        num/=10;
+        
+        while(d>0)
+        {
+            s+='M';
+            d-=1000;
+        }
+        if(c==400)
+            s+="CD";
+        else if(c==900)
+            s+="CM";
+        else
+        {
+            if(c>=500)
+            {
+                s+='D';
+                c-=500;
+            }
+            while(c>0)
+            {
+                s+='C';
+                c-=100;
+            }
+        }
+        if(b==40)
+            s+="XL";
+        else if(b==90)
+            s+="XC";
+        else
+        {
+            if(b>=50)
+            {
+                s+='L';
+                b-=50;
+            }
+            while(b>0)
+            {
+                s+='X';
+                b-=10;
+            }
+                
+        }
+        if(a==4)
+        {
+            s+="IV";
+        }
+        else if(a==9)
+        {
+            s+="IX";
+        }
+        else
+        {
+            if(a>=5)
+            {
+                s+='V';
+                a-=5;
+            }
+            while(a>0)
+            {
+                s+='I';
+                a--;
+            }
+        }
+        
+        return s;
+    }
+};
