@@ -1,0 +1,59 @@
+class Solution {
+
+    public:
+
+        int maxLength(vector<int> &arr,int n){
+
+           //code here
+
+           int pos=0,res=0,neg=0;
+
+           for(int i=0;i<n;i++){
+
+               if(arr[i]==0){
+
+                   neg=0;
+
+                   pos=0;
+
+               }
+
+               else if(arr[i]<0){
+
+                   swap(pos,neg);
+
+                   neg++;
+
+                   if(pos!=0){
+
+                       pos++;
+
+                   }
+
+                   res=max(res,pos);
+
+               }
+
+               else{
+
+                   pos++;
+
+                   if(neg!=0){
+
+                       neg++;
+
+                   }
+
+                   res=max(res,pos);
+
+               }
+
+           }
+
+           return res;
+
+        }
+
+ 
+
+};
