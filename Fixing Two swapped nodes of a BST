@@ -1,0 +1,22 @@
+class Solution {
+  public:
+    Node* prev = nullptr, *node1 = nullptr, *node2 = nullptr;
+    void helper(Node* root){
+        if(!root)return;
+        helper(root->left);
+        if(prev){
+            if(prev->data > root->data){
+                if(!node1)node1 = prev, node2 = root;
+                else node2 = root;
+            }
+        }
+        prev = root;
+        helper(root->right);
+    }
+    struct Node *correctBST(struct Node *root) {
+        // code here
+        helper(root);
+        swap(node1->data, node2->data);
+        return root;
+    }
+};
