@@ -1,0 +1,36 @@
+#define pb push_back
+class Solution {
+  public:
+  
+    void dfs(int i, vector<vector<int>> &gr, vector<int> &vis, vector<int> &comp)
+    {
+        if(vis[i] == 1) return;
+        vis[i] = 1;
+        comp.pb(i);
+        for(auto it: gr[i]) dfs(it, gr, vis, comp);
+        
+    }
+  
+    int findNumberOfGoodComponent(int V, vector<vector<int>>& adj) {
+        vector<int> vis(V+2, 0);
+        int ans = 0;
+        for(int i = 1; i<=V; ++i)
+        {
+            if(vis[i]==1) continue;
+            vector<int> comp;
+            dfs(i, adj, vis, comp);
+            int sz = comp.size();
+            ++ans;
+            for(auto it: comp)
+            {
+                if(adj[it].size() != sz-1) 
+                {
+                    ans--;
+                    break;
+                }
+            }
+            
+        }
+        return ans;
+    }
+};
