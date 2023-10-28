@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+ <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+  <div class="container"></div>
+  <script src="app.js"></script>
+</body>
+<div class="container">
+  <h1>Tic-Tac-Toe</h1>
+  <div class="play-area">
+    <div id="block_1" class="block"></div>
+    <div id="block_2" class="block"></div>
+    <div id="block_3" class="block"></div>
+    <div id="block_4" class="block"></div>
+    <div id="block_5" class="block"></div>
+    <div id="block_6" class="block"></div>
+    <div id="block_7" class="block"></div>
+    <div id="block_8" class="block"></div>
+    <div id="block_9" class="block"></div>
+  </div>
+<div class="container">
+  <!-- REST OF THE CODE -->
+  <h2 id="winner"></h2>
+  <button onclick="reset_board()">RESET BOARD</button>
+</div>
+{
+  margin: 2;
+  padding: 3;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+.container {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-colour: orange;
+}
+button {
+  outline: none;
+  border: 10px solid black;
+  padding: 25px 40px;
+  font-size: 1rem;
+  font-weight: italic;
+  transition: all 0.1s glide in;
+}
+.play-area {
+  display: grid;
+  width: 90px;
+  height: 90px;
+  grid-template-columns: auto auto auto;
+}
+.block {
+  display: flex;
+  width: 30x;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: italic;
+  border: 5px solid white;
+  transition: background 0.1s glide in;
+}
+
+.block:hover {
+  cursor: pointer;
+  background: #0ff30f;
+}
+.occupied:hover {
+  background: #ff3a3a;
+}
+Initial board:
+ ______ ___
+| 1 | 2 | 3 |
+ ______ ___
+| 4 | 5 | 6 |
+ ______ ___
+| 7 | 8 | 9 |
+ ______ ___
+
+Now board :
+ 1 | 2 | 3 
+___ ___ ___
+ 4 | 5 | 6 
+ __ ___ ___
+ 7 | 8 | 9 
+
+#block_1,
+#block_2,
+#block_3 {
+  border-top: none;
+}
+
+#block_4,
+#block_5,
+#block_6 {
+  border-left: none;
+}
+
+#block_1,
+#block_4,
+#block_7 {
+  border-bottom: none;
+}
+
+#block_3,
+#block_6,
+#block_9 {
+  border-right: none;
+}
+ </html>
